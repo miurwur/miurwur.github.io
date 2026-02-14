@@ -1,1 +1,14 @@
 site_name: afhgk
+theme:
+  name: material
+  palette:
+    primary: purple  
+    accent: deep purple  
+  
+  font:
+    text: Roboto  # Шрифт
+    code: Fira Code  # Шрифт для кода
+  
+  features:
+    - navigation.tabs  # Вкладки навигации
+    - navigation.top  # Кнопка "Наверх"
