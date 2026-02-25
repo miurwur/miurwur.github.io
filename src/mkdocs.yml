@@ -1,5 +1,5 @@
 site_name: Портфолио
 theme:
-  name: dracula
+  name: material
   palette:
     primary: teal
