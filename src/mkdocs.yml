@@ -1,5 +1,19 @@
-site_name: Портфолио
+site_name: Мое Портфолио
 theme:
   name: material
+  # Отключаем встроенные палитры, мы будем управлять цветами через CSS
   palette:
-    primary: teal
+    - scheme: default
+      primary: custom
+      accent: custom
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+  font:
+    text: Inter  # Хороший гуманистический гротеск, близкий к Frutiger
+    code: Fira Code
+
+extra_css:
+  - stylesheets/extra.css
