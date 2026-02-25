@@ -1,3 +1,5 @@
+site_name: Портфолио
 theme:
-  name: readthedocs
-site_name: anya
+  name: dracula
+  palette:
+    primary: teal
