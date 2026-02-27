@@ -1,19 +1,18 @@
-site_name: Мое Портфолио
+site_name: Портфолио | Анна Барыкина
+site_description: Python course 
+site_author: Anna Barykina
+
+nav:
+  - Главная страница: index.md
+  - Обо мне: author.md
+  - Лабораторные работы: labs_list.md
+
 theme:
-  name: material
-  # Отключаем встроенные палитры, мы будем управлять цветами через CSS
-  palette:
-    - scheme: default
-      primary: custom
-      accent: custom
-  features:
-    - navigation.tabs
-    - navigation.sections
-    - navigation.top
-    - content.code.copy
-  font:
-    text: Inter  # Хороший гуманистический гротеск, близкий к Frutiger
-    code: Fira Code
+  name: dracula
+  language: ru  
 
 extra_css:
   - stylesheets/extra.css
+
+plugins:
+  - search
