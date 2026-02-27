@@ -1,6 +1,4 @@
 site_name: Портфолио | Анна Барыкина
-site_description: Python course 
-site_author: Anna Barykina
 
 nav:
   - Главная страница: index.md
