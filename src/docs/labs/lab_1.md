@@ -46,3 +46,6 @@ extra_css:
 plugins:
   - search
 ```
+
+### Структура страниц:
+<img src="/img/struct.PNG" alt="Структура_страниц" width="200">
