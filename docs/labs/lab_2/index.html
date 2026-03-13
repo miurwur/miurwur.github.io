@@ -152,7 +152,12 @@
 <li>Провести статистический анализ данных</li>
 <li>Визуализировать результаты с помощью matplotlib и seaborn</li>
 </ol>
-<h2 id="_3">Реализованные функции</h2>
+<h2 id="_3">Структура проекта:</h2>
+<p><img src="/img/struct_lab2.PNG" alt="тесты_2_лаба" width="200"></p>
+<p>main.py - основной файл с функциями<br />
+test.py - тесты<br />
+plots - графики  </p>
+<h2 id="_4">Реализованные функции</h2>
 <h3 id="1">1. Создание и обработка массивов</h3>
 <ul>
 <li><code>create_vector()</code> - создание вектора от 0 до 9 с использованием <code>np.arange()</code></li>
@@ -161,11 +166,12 @@
 <li><code>transpose_matrix()</code> - транспонирование матриц</li>
 </ul>
 <h3 id="2">2. Векторные операции</h3>
-<p>Реализованы базовые операции с использованием векторизации:
-- Сложение векторов
-- Умножение на скаляр
-- Поэлементное умножение
-- Скалярное произведение</p>
+<ul>
+<li>Сложение векторов  </li>
+<li>Умножение на скаляр  </li>
+<li>Поэлементное умножение  </li>
+<li>Скалярное произведение  </li>
+</ul>
 <h3 id="3">3. Матричные операции</h3>
 <ul>
 <li>Умножение матриц </li>
@@ -185,15 +191,29 @@
 <li>Тепловая карта корреляций</li>
 <li>Линейный график успеваемости</li>
 </ul>
-<h2 id="_4">Особенности реализации</h2>
-<h3 id="_5">Обработка ошибок</h3>
+<h3 id="_5">Особенности реализации</h3>
 <p>В функциях добавлена проверка входных данных:</p>
 <pre><code class="language-python">if a.shape != b.shape:
     raise ValueError()
 </code></pre>
 <p>Использованы аннотации согласно PEP-484:</p>
-<pre><code class="language-python">def scalar_multiply(vec: np.ndarray, scalar: Union[int, float]) -&gt; np.ndarray:
-</code></pre></p>
+<pre><code class="language-python">def scalar_multiply(vec: np.ndarray, scalar: int | float) -&gt; np.ndarray:
+</code></pre>
+<p>Все графики сохранены в директорию проекта</p>
+<h2 id="_6">Тесты</h2>
+<p><img src="/img/tests_lab2.PNG" alt="тесты_2_лаба" width="500"></p>
+<h2 id="_7">Запуск проекта</h2>
+<p>Активизация окружения: <br />
+- source numpy_env/bin/activate <br />
+- Windows: venv\Scripts\activate  </p>
+<p>Запуск тестов:
+- python -m pytest tests.py -v</p>
+<h2 id="_8">Итоги</h2>
+<ul>
+<li>Реализована библиотека NumPy для работы с данными</li>
+<li>Сохранена визуализация графиков в папку plots/</li>
+<li>Все тесты пройдены</li>
+</ul></p>
     </article>
 </section>
             <!-- endblock -->
