@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 
 <head>
-        <title>Lab 2 - Портфолио | Анна Барыкина</title>
+        <title>Лабораторная работа №2 - Портфолио | Анна Барыкина</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -142,7 +142,58 @@
             <!-- block content -->
                 <section class="p-md-5 section-content">
     <article>
-        <p></p>
+        <p><h1 id="no2">Лабораторная работа №2</h1>
+<h2 id="_1">Цель работы</h2>
+<p>Изучение основных возможностей библиотеки NumPy для численных вычислений и анализа данных</p>
+<h2 id="_2">Задачи</h2>
+<ol>
+<li>Освоить создание и обработку массивов в NumPy</li>
+<li>Научиться выполнять векторные и матричные операции</li>
+<li>Провести статистический анализ данных</li>
+<li>Визуализировать результаты с помощью matplotlib и seaborn</li>
+</ol>
+<h2 id="_3">Реализованные функции</h2>
+<h3 id="1">1. Создание и обработка массивов</h3>
+<ul>
+<li><code>create_vector()</code> - создание вектора от 0 до 9 с использованием <code>np.arange()</code></li>
+<li><code>create_matrix()</code> - генерация случайной матрицы 5x5 через <code>np.random.rand()</code></li>
+<li><code>reshape_vector()</code> - изменение формы массива с помощью <code>reshape()</code></li>
+<li><code>transpose_matrix()</code> - транспонирование матриц</li>
+</ul>
+<h3 id="2">2. Векторные операции</h3>
+<p>Реализованы базовые операции с использованием векторизации:
+- Сложение векторов
+- Умножение на скаляр
+- Поэлементное умножение
+- Скалярное произведение</p>
+<h3 id="3">3. Матричные операции</h3>
+<ul>
+<li>Умножение матриц </li>
+<li>Вычисление определителя </li>
+<li>Нахождение обратной матрицы </li>
+<li>Решение систем линейных уравнений </li>
+</ul>
+<h3 id="4">4. Статистический анализ</h3>
+<ul>
+<li>Загрузка данных из CSV</li>
+<li>Вычисление статистических показателей</li>
+<li>Min-Max нормализация данных</li>
+</ul>
+<h3 id="5">5. Визуализация</h3>
+<ul>
+<li>Гистограмма распределения оценок</li>
+<li>Тепловая карта корреляций</li>
+<li>Линейный график успеваемости</li>
+</ul>
+<h2 id="_4">Особенности реализации</h2>
+<h3 id="_5">Обработка ошибок</h3>
+<p>В функциях добавлена проверка входных данных:</p>
+<pre><code class="language-python">if a.shape != b.shape:
+    raise ValueError()
+</code></pre>
+<p>Использованы аннотации согласно PEP-484:</p>
+<pre><code class="language-python">def scalar_multiply(vec: np.ndarray, scalar: Union[int, float]) -&gt; np.ndarray:
+</code></pre></p>
     </article>
 </section>
             <!-- endblock -->
