@@ -167,29 +167,29 @@ plots - графики  </p>
 </ul>
 <h3 id="2">2. Векторные операции</h3>
 <ul>
-<li>Сложение векторов  </li>
-<li>Умножение на скаляр  </li>
-<li>Поэлементное умножение  </li>
-<li>Скалярное произведение  </li>
+<li><code>vector_add()</code> - сложение двух векторов</li>
+<li><code>scalar_multiply()</code> - умножение вектора на скаляр</li>
+<li><code>elementwise_multiply()</code> - поэлементное умножение двух массивов</li>
+<li><code>dot_product()</code> - вычисление скалярного произведения векторов с помощью <code>np.dot()</code></li>
 </ul>
 <h3 id="3">3. Матричные операции</h3>
 <ul>
-<li>Умножение матриц </li>
-<li>Вычисление определителя </li>
-<li>Нахождение обратной матрицы </li>
-<li>Решение систем линейных уравнений </li>
+<li><code>matrix_multiply()</code> - умножение матриц с использованием оператора <code>@</code> или <code>np.matmul()</code></li>
+<li><code>matrix_determinant()</code> - вычисление определителя квадратной матрицы через <code>np.linalg.det()</code></li>
+<li><code>matrix_inverse()</code> - нахождение обратной матрицы с помощью <code>np.linalg.inv()</code></li>
+<li><code>solve_linear_system()</code> - решение системы линейных уравнений Ax = b через <code>np.linalg.solve()</code></li>
 </ul>
 <h3 id="4">4. Статистический анализ</h3>
 <ul>
-<li>Загрузка данных из CSV</li>
-<li>Вычисление статистических показателей</li>
-<li>Min-Max нормализация данных</li>
+<li><code>load_dataset()</code> - загрузка данных из CSV-файла с помощью <code>pd.read_csv()</code> и преобразование в NumPy массив через <code>.to_numpy()</code></li>
+<li><code>statistical_analysis()</code> - вычисление статистических показателей (среднее, медиана, стандартное отклонение, минимум, максимум, 25й и 75й перцентили) с использованием <code>np.mean()</code>, <code>np.median()</code>, <code>np.std()</code>, <code>np.min()</code>, <code>np.max()</code>, <code>np.percentile()</code></li>
+<li><code>normalize_data()</code> - Min-Max нормализация данных в диапазон [0, 1] по формуле (x - min) / (max - min)</li>
 </ul>
 <h3 id="5">5. Визуализация</h3>
 <ul>
-<li>Гистограмма распределения оценок</li>
-<li>Тепловая карта корреляций</li>
-<li>Линейный график успеваемости</li>
+<li><code>plot_histogram()</code> - построение гистограммы распределения оценок по математике с использованием <code>plt.hist()</code> и сохранение в файл <code>math_histogram.png</code></li>
+<li><code>plot_heatmap()</code> - создание тепловой карты корреляции между предметами через <code>sns.heatmap()</code> с аннотациями и сохранение в <code>correlation_heatmap.png</code></li>
+<li><code>plot_line()</code> - построение линейного графика зависимости оценки от номера студента с помощью <code>plt.plot()</code> и сохранение в <code>student_scores_line.png</code></li>
 </ul>
 <h3 id="_5">Особенности реализации</h3>
 <p>В функциях добавлена проверка входных данных:</p>
