@@ -21,11 +21,6 @@ workflows:
           - name: publish-to-release-branch
             script:
               - git checkout -b release
-              # 1. Очищаем ветку от лишних исходников (кроме папки с сайтом)
-              - git rm -rf . 
-              # 2. Перемещаем содержимое собранного сайта в корень
-              - mv src/site/* .
-              # 3. Добавляем все файлы и пушим
-              - git add .
+              - git add src/site
               - "git commit -m \"feat: автоматическое обновление сайта\""
               - "git push origin release -f"
