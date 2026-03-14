@@ -18,28 +18,9 @@ workflows:
               - echo "Сайт собран в папке ./site"
               - ls -la ./site
           
-          - name: publish-to-release-branch
+          - name: publish-to-release-branch           
             script:
-              # Переключаемся на ветку release (создаем, если нет)
-              - git checkout -b release || git checkout release
-              
-              # 1. Удаляем абсолютно всё из ветки, чтобы не было конфликтов
-              - git rm -rf .
-              
-              # 2. Копируем СОДЕРЖИМОЕ папки site в корень репозитория
-              # Точка после слэша (./) критически важна!
-              - cp -R src/site/. ./
-              
-              # 3. На всякий случай удаляем саму папку src, если она скопировалась
-              - rm -rf src
-              
-              # 4. Добавляем всё, фиксируем и пушим
-              - git add .
+              - git checkout -b release
+              - git add src/site
               - "git commit -m \"feat: автоматическое обновление сайта\""
               - "git push origin release -f"
-           
-            # script:
-            #   - git checkout -b release
-            #   - git add src/site
-            #   - "git commit -m \"feat: автоматическое обновление сайта\""
-            #   - "git push origin release -f"
