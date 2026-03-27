@@ -1,3 +1,5 @@
 site:
   root: site
   ref: release
+
+# статические файлы берутся из папки site ветки release
