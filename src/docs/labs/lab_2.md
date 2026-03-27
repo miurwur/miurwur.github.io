@@ -9,7 +9,7 @@
 4. Визуализировать результаты с помощью matplotlib и seaborn
 
 ## Структура проекта: 
-<img src="src/docs/img/struct_lab2.PNG" alt="тесты_2_лаба" width="200">
+<img src="/img/struct_lab2.PNG" alt="тесты_2_лаба" width="200">
 
 main.py - основной файл с функциями  
 test.py - тесты  
@@ -60,7 +60,8 @@ def scalar_multiply(vec: np.ndarray, scalar: int | float) -> np.ndarray:
 Все графики сохранены в директорию проекта
 
 ## Тесты
-<img src="src/docs/img/tests_lab2.PNG" alt="тесты_2_лаба" width="500">
+<img src="/img/tests_lab2.PNG" alt="тесты_2_лаба" 
+width="500">
 
 ## Запуск проекта
 Активизация окружения:   
