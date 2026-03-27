@@ -13,7 +13,7 @@ git remote add sourcecraft
 ```python
 git remote -v
 ```
-<img src="/img/remove-v.PNG" alt="remove-v" width="200">  
+<img src="src/docs/img/remove-v.PNG" alt="remove-v" width="200">  
 
 5. Настройка CI/CD (Для автоматизации процесса были созданы конфигурационные файлы в директории .sourcecraft/ и .github/)  
 Описанный workflow автоматически запускается при каждом push в ветку main.   
