@@ -1,0 +1,33 @@
+name: MkDocs Continuous Deployment
+
+on:
+  push:
+    branches:
+      - main  # Запускать только при пуше в основную ветку
+
+permissions:
+  contents: write  # Разрешаем записывать файлы в репозиторий
+
+jobs:
+  build-and-deploy-site:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "1. Checkout Source Code"
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Подгружаем всю историю для корректной даты правок
+
+      - name: "2. Initialize Python Environment"
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: "3. Install Project Dependencies"
+        run: |
+          pip install -r requirements.txt
+
+      - name: "4. Build and Push to GitHub Pages"
+        run: |
+          # Используем встроенную команду mkdocs для деплоя
+          # Флаг --force гарантирует перезапись ветки gh-pages
+          mkdocs gh-deploy --config-file mkdocs.yml --force --clean
