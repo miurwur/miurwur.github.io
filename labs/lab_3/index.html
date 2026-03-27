@@ -2,7 +2,7 @@
 <html lang="en" data-bs-theme="dark">
 
 <head>
-        <title>Lab 3 - Портфолио | Анна Барыкина</title>
+        <title>Лабораторная работа №3 - Портфолио | Анна Барыкина</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -142,7 +142,39 @@
             <!-- block content -->
                 <section class="p-md-5 section-content">
     <article>
-        <p></p>
+        <p><h1 id="no3">Лабораторная работа №3</h1>
+<h2 id="_1">Цель работы</h2>
+<p>Настроить процесс CI/CD для статического сайта. Добавить репозиторий на SourceCraft  </p>
+<h2 id="_2">Ход Работы</h2>
+<ol>
+<li>Создан пустой репозиторий для проекта на SourceCraft  </li>
+<li>Сгенерирован персональный токен доступа  </li>
+<li>Добавление удаленного репозитория   </li>
+</ol>
+<pre><code class="language-python">git remote add sourcecraft  
+</code></pre>
+<ol>
+<li>Проверка списка удаленных репозиториев  </li>
+</ol>
+<pre><code class="language-python">git remote -v
+</code></pre>
+<p><img src="/img/remove-v.PNG" alt="remove-v" width="200"> </p>
+<ol>
+<li>Настройка CI/CD (Для автоматизации процесса были созданы конфигурационные файлы в директории .sourcecraft/ и .github/)<br />
+Описанный workflow автоматически запускается при каждом push в ветку main. <br />
+Основные этапы(cubes):  </li>
+<li>Сборка: использование python:3.14-slim, установка зависимостей из requirements.txt и генерация статических HTML-файлов командой mkdocs build  </li>
+<li>Публикация: Создание ветки release, добавление собранного сайта из папки ./site, отправка изменений в удаленный репозиторий.  </li>
+</ol>
+<p>Разница в CI/CD для GitHub и SourceCraft:<br />
+GitHub:<br />
+- используется mkdocs gh-deploy - черный ящик, сам автоматически создает ветку gh-pages, собирает туда сайт и делает push<br />
+SourceCraft:<br />
+- Настройка вручную через кубы. Прописываем шаги(создание ветки release, добавление папки site, коммит и push). Отдельный файл sites.yaml связывает ветку с веб-хостингом  </p>
+<ol>
+<li>Развертывание сайта
+После выполнения команды git push sourcecraft main на SourceCraft успешно собран сайт. Итоговые файлы сайта размещены в ветке release репозитория.  </li>
+</ol></p>
     </article>
 </section>
             <!-- endblock -->
