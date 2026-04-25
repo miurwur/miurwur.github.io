@@ -2,7 +2,7 @@
 ## Цель работы  
 Заполнить борд, рассмотреть модели для решения задачи регрессии. Попытаться построить более точную модель.
 
-#[Переход на блокнот](https://colab.research.google.com/drive/13KDc8E0TlWDncBpdfIxno-kAGYjbghdT?usp=sharing)
+#[Переход на блокнот](https://colab.research.google.com/drive/1HbhR2YTRInh77A3MfAIwe42xMtDKMJM2?usp=sharing)
 
 ## Теоретические сведения
 Основные понятия:  
