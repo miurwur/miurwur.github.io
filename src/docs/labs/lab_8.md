@@ -64,7 +64,7 @@ if content_box:
     full_text = content_box.get_text(separator=' ', strip=True)
 ```
 
-### 3. Сохранение данных
+### 3. Сохранение данных  
 
 <img src="/img/lab8/data_struct1.PNG" alt="структура_данных_1" width="200">  
 
