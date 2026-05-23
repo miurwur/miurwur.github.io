@@ -2,7 +2,7 @@
 <html lang="en" data-bs-theme="dark">
 
 <head>
-        <title>Lab 8 - Портфолио | Анна Барыкина</title>
+        <title>Лабораторная работа №8 - Портфолио | Анна Барыкина</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -142,7 +142,63 @@
             <!-- block content -->
                 <section class="p-md-5 section-content">
     <article>
-        <p></p>
+        <p><h1 id="no8">Лабораторная работа №8</h1>
+<h1 id="_1"><a href="https://colab.research.google.com/drive/1SYfRb8TDZJa2T4mrLQ0H7b-JD8Tu9vsI?usp=sharing">Переход на блокнот</a></h1>
+<h2 id="_2">Цель работы</h2>
+<p>Освоить технологию веб-скрапинга для сбора и структурирования данных с сайтов и выполнить первичный анализ полученной информации.</p>
+<h2 id="_3">Задачи работы. Чеклист</h2>
+<p>1) ✅ Сделайте копию борда, получив собственный ноутбук с помощью сервиса Google Colab. <br />
+2) ✅ Открыть доступ, отобразить в верхней ячейке фамилию, имя и группу. <br />
+3) ✅ Спарсить <br />
+- Идентификатор новости (целочисленное число из URL)<br />
+- Название новости<br />
+- Дата её размещения<br />
+- URL на страницу с конкретной новостью.<br />
+4) ✅ Для каждой новости в датасете спарсить:<br />
+- Идентификатор<br />
+- Название новости<br />
+- Дата размещения<br />
+- Количество просмотров<br />
+- Текст (не забыть про вариативность верстки)<br />
+- Теги<br />
+5) ✅ Сохранить данные из пункта 4 в csv-файле (или файлах) в папке (news_content) рядом с csv с общими данными (из пункта 3).  </p>
+<h2 id="_4">Этапы выполнения</h2>
+<h3 id="1">1. Поиск и сбор ссылок на новости</h3>
+<ul>
+<li><strong>Источник:</strong> <code>news.itmo.ru</code></li>
+<li><strong>Поисковые запросы:</strong></li>
+<li>нейротехнологии</li>
+<li>нейросеть</li>
+<li>программирование</li>
+<li>машинное обучение</li>
+</ul>
+<p><strong>Собрано:</strong> заголовки, URL, даты публикации</p>
+<pre><code class="language-python"># Пример: поиск всех новостей по запросу
+data = requests.get(SEARCH_DOMAIN + query)
+bs = BeautifulSoup(data.text, 'html.parser')
+news_headers = bs.find_all('li', {'class': 'weeklyevent'})
+</code></pre>
+<h3 id="2">2. Детальный парсинг каждой новости</h3>
+<pre><code class="language-python">Для каждой новости были получены следующие данные:  
+Поле           |   Способ получения  
+Идентификатор      Регулярное выражение из URL  
+Название           Тег &lt;h4&gt;&lt;a&gt;    
+Дата               Передана из предыдущего этапа  
+Кол-во просмотров  Теги с классами eye, views  
+Текст новости      Контейнеры news-content, article-body, content-main, article  
+Теги               &lt;div class=&quot;tags&quot;&gt; или &lt;ul class=&quot;tags&quot;&gt;
+</code></pre>
+<pre><code class="language-python"># Пример: извлечение текста с очисткой от служебных тегов
+if content_box:
+    for bad_tag in content_box(['script', 'style', 'time', 'span']):
+        bad_tag.decompose()
+    full_text = content_box.get_text(separator=' ', strip=True)
+</code></pre>
+<h3 id="3">3. Сохранение данных</h3>
+<p><img src="/img/lab8/data_struct1.PNG" alt="структура_данных_1" width="200">  </p>
+<p>detailed_news.csv  - все поля(ID, название, дата, просмотры, текст, теги, URL) <br />
+news_....txt - текст новости по ID  </p>
+<p>+scraped_news_general.csv - краткая версия (ID, название, дата, URL)  </p></p>
     </article>
 </section>
             <!-- endblock -->

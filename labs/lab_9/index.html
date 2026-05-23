@@ -2,7 +2,7 @@
 <html lang="en" data-bs-theme="dark">
 
 <head>
-        <title>Lab 9 - Портфолио | Анна Барыкина</title>
+        <title>Лабораторная работа №9 - Портфолио | Анна Барыкина</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -142,7 +142,43 @@
             <!-- block content -->
                 <section class="p-md-5 section-content">
     <article>
-        <p></p>
+        <p><h1 id="no9">Лабораторная работа №9</h1>
+<h2 id="_1">Анализ успеваемости студентов</h2>
+<h1 id="_2"><a href="https://sourcecraft.dev/nyabarykina/itmo-python-lab-template">Переход в репозиторий лабораторной</a></h1>
+<h2 id="_3">Данные</h2>
+<ul>
+<li><strong>Источник:</strong> <code>StudentsPerformance.csv</code> (1000 записей, 8 столбцов)</li>
+<li><strong>Числовые признаки:</strong> math_score, reading_score, writing_score</li>
+<li><strong>Категориальные признаки:</strong> gender, race_ethnicity, parental_education, lunch, test_prep</li>
+</ul>
+<h2 id="_4">Предобработка</h2>
+<ul>
+<li>Переименованы столбцы (убраны пробелы, спецсимволы)</li>
+<li>Созданы новые признаки: <code>average_score</code>, <code>total_score</code>, <code>performance_level</code></li>
+<li>Пропуски отсутствуют</li>
+</ul>
+<h2 id="_5">Ключевые результаты</h2>
+<p>1) test_prep (completed): +7.6 балла<br />
+2) lunch (standard): +8.6 балла<br />
+3) parental_education (master's): +11 баллов vs some high school<br />
+4) gender (female): +3.8 балла(в среднем)<br />
+5) race_ethnicity (group E vs A): +9.8 балла  </p>
+<h2 id="_6">Визуализации</h2>
+<ol>
+<li>Гистограмма распределения math_score</li>
+<li>Столбчатые диаграммы по test_prep и gender</li>
+<li>Диаграмма рассеяния (math_score vs reading_score)</li>
+<li>Доп: Boxplot по parental_education</li>
+</ol>
+<h2 id="cicd">CI/CD</h2>
+<ul>
+<li><strong>Платформа:</strong> SourceCraft</li>
+<li><strong>Автоматизация:</strong> установка зависимостей -&gt; выполнение ноутбука (papermill) -&gt; генерация HTML-отчета</li>
+<li><strong>Артефакты:</strong> <code>executed_lab.ipynb</code>, <code>report.html</code></li>
+<li><strong>Маркер выполнения:</strong> в ноутбук добавляется Markdown-ячейка с подтверждением запуска в CI/CD (время, hostname)</li>
+</ul>
+<h2 id="_7">Вывод</h2>
+<p>Успеваемость сильно коррелирует с социально-экономическими факторами: подготовкой, питанием, образованием родителей. CI/CD пайплайн полностью автоматизирует процесс выполнения и формирования отчета.</p></p>
     </article>
 </section>
             <!-- endblock -->
